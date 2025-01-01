@@ -1,0 +1,26 @@
+# FBE
+ro.crypto.volume.filenames_mode=aes-256-cts
+fbe.metadata.wrappedkey=true
+
+# HARDWARE
+ro.vendor.mediatek.platform=MT6785
+ro.board.platform=mt6785
+
+# USB DEBUG
+persist.sys.usb.config=mtp,adb
+ro.secure=0
+ro.debuggable=1
+
+# BEANPOD KEYMASTER
+ro.hardware.kmsetkey=beanpod
+ro.hardware.gatekeeper=beanpod
+
+# TEE
+ro.mtk_tee_gp_support=1
+ro.mtk_microtrust_tee_support=1
+
+# SYSTEM
+ro.postinstall.fstab.prefix=/system
+
+# FUSE
+persist.sys.fuse.passthrough.enable=true

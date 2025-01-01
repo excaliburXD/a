@@ -1,0 +1,35 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# Mount Point            fstype    Device                                                   Flags
+
+# User-Writable
+/boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot";backup=1;flashimg=1;slotselect
+/lk                       emmc     /dev/block/platform/bootdevice/by-name/lk                flags=display="lk.img ~Orange State~";backup=1;flashimg=1;slotselect
+/logo                     emmc     /dev/block/platform/bootdevice/by-name/logo              flags=display="Logo.img ~Splash Screen~";backup=1;flashimg=1;slotselect
+/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="dtbo";backup=1;flashimg=1;slotselect
+/vendor_boot              emmc     /dev/block/platform/bootdevice/by-name/vendor_boot       flags=display="Vendor Boot.img";flashimg=1;backup=1;slotselect
+/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="vbmeta.img";backup=1;flashimg=1;slotselect
+/vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="vbmeta System.img";backup=1;flashimg=1;slotselect
+/vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="vbmeta Vendor.img";backup=1;flashimg=1;slotselect
+
+# Super partitions mount
+/system_img               emmc     /dev/block/mapper/system_a                               flags=display="System.img";backup;flashimg;wipeingui
+/system_ext_img           emmc     /dev/block/mapper/system_ext_a                           flags=display="System_ext.img";backup;flashimg;wipeingui
+/vendor_img               emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor.img";backup;flashimg;wipeingui
+/product_img              emmc     /dev/block/mapper/product_a                              flags=display="Product.img";backup;flashimg;wipeingui 
+
+# Sensitif Data (IMEI, SIM, Device Info)
+# below four partitions are ext4, but we are using only for backup so emmc
+/protect_f                emmc     /dev/block/platform/bootdevice/by-name/protect1          flags=display="Protect_f";backup=1;
+/protect_s                emmc     /dev/block/platform/bootdevice/by-name/protect2          flags=display="Protect_s";backup=1;
+/nvdata                   emmc     /dev/block/platform/bootdevice/by-name/nvdata            flags=display="Nvdata";backup=1;
+/nvcfg                    emmc     /dev/block/platform/bootdevice/by-name/nvcfg             flags=display="Nvcfg";backup=1;
+/persist                  emmc     /dev/block/platform/bootdevice/by-name/persist           flags=display="Persist";backup=1;
+/nvram                    emmc     /dev/block/platform/bootdevice/by-name/nvram             flags=display="Nvram";backup=1;
+/persistent               emmc     /dev/block/platform/bootdevice/by-name/frp               flags=display="Persistent";backup=1
+
+# Removable
+/external_sd              auto     /dev/block/mmcblk0p1         /dev/block/mmcblk0          flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable                      
+/usb-otg                  auto     /dev/block/sdd1              /dev/block/sdd              flags=fsflags=utf8;display="USB-OTG";storage;wipeingui;removable

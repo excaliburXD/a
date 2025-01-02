@@ -44,10 +44,15 @@ Current state of features (from [here](https://twrp.me/faq/OfficialMaintainer.ht
 
 ```bash
 source build/envsetup.sh
-lunch twrp_x695c-eng
+lunch twrp_radiant-eng
 mka bootimage
 ```
-## Group
 
-* GROUP: https://t.me/InfinixNote10PID
-* GUIDE: https://t.me/infinixupdaterecovery/7
+## Thanks to
+
+* ramabondanprakoso (Initial Base X695C)
+* hoshiyomi
+* all groups member radiant
+* https://t.me/InfinixNote10PID
+* guide flash costum Recovey
+* https://t.me/infinixupdaterecovery/7

@@ -15,6 +15,10 @@
 /vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="vbmeta Vendor.img";backup=1;flashimg=1;slotselect
 
 # Super partitions mount
+/system                   auto     /dev/block/mapper/system_a                               flags=backup=0;removable;slotselect
+/system_ext               auto     /dev/block/mapper/system_ext_a                           flags=backup=0;removable;slotselect
+/vendor                   auto     /dev/block/mapper/vendor_a                               flags=backup=0;removable;slotselect
+/product                  auto     /dev/block/mapper/product_a                              flags=backup=0;removable;slotselect 
 /system_img               emmc     /dev/block/mapper/system_a                               flags=display="System.img";backup;flashimg;wipeingui
 /system_ext_img           emmc     /dev/block/mapper/system_ext_a                           flags=display="System_ext.img";backup;flashimg;wipeingui
 /vendor_img               emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor.img";backup;flashimg;wipeingui

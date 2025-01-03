@@ -75,7 +75,7 @@ PRODUCT_SOONG_NAMESPACES += \
 ## Configuration PBRP specific ##
 
 # Device Identity
-PB_DEVICE := Infinix Note 10 Pro Radiant
+PB_DEVICE := radiant
 PITCHBLACK_MAINTAINER := "gilanggegea"
 
 # Fitur Recovery

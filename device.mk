@@ -71,3 +71,27 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+## Configuration PBRP specific ##
+
+# Device Identity
+PB_DEVICE := Infinix Note 10 Pro Radiant
+PITCHBLACK_MAINTAINER := "gilanggegea"
+
+# Fitur Recovery
+PITCHBLACK_ENCRYPTION := true
+PITCHBLACK_ADVANCED_SAR := true
+PITCHBLACK_MTP := true
+PITCHBLACK_BUILD_LOGO := true
+
+# Settings Theme
+PBRP_THEME_COLOR := "blue"
+PBRP_STATUSBAR_CUSTOM_CLOCK := true
+
+# Disabling Verity dan Encryption
+PBRP_DISABLE_DM_VERITY := true
+PBRP_DISABLE_FORCE_ENCRYPTION := true
+
+# Information Build
+PBRP_BUILD_DATE := $(shell date +%Y%m%d)
+PBRP_BUILD_TYPE := "Unofficial radiant"

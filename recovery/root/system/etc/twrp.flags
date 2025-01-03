@@ -8,21 +8,21 @@
 /boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot";backup=1;flashimg=1;slotselect
 /lk                       emmc     /dev/block/platform/bootdevice/by-name/lk                flags=display="lk.img ~Orange State~";backup=1;flashimg=1;slotselect
 /logo                     emmc     /dev/block/platform/bootdevice/by-name/logo              flags=display="Logo.img ~Splash Screen~";backup=1;flashimg=1;slotselect
-/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="dtbo";backup=1;flashimg=1;slotselect
+/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="dtbo.img";backup=1;flashimg=1;slotselect
 /vendor_boot              emmc     /dev/block/platform/bootdevice/by-name/vendor_boot       flags=display="Vendor Boot.img";flashimg=1;backup=1;slotselect
 /vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="vbmeta.img";backup=1;flashimg=1;slotselect
 /vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="vbmeta System.img";backup=1;flashimg=1;slotselect
 /vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="vbmeta Vendor.img";backup=1;flashimg=1;slotselect
 
 # Super partitions mount
-/system                   auto     /dev/block/mapper/system_a                               flags=backup=0;removable;slotselect
-/system_ext               auto     /dev/block/mapper/system_ext_a                           flags=backup=0;removable;slotselect
-/vendor                   auto     /dev/block/mapper/vendor_a                               flags=backup=0;removable;slotselect
-/product                  auto     /dev/block/mapper/product_a                              flags=backup=0;removable;slotselect 
-/system_img               emmc     /dev/block/mapper/system_a                               flags=display="System.img";backup;flashimg;wipeingui
-/system_ext_img           emmc     /dev/block/mapper/system_ext_a                           flags=display="System_ext.img";backup;flashimg;wipeingui
-/vendor_img               emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor.img";backup;flashimg;wipeingui
-/product_img              emmc     /dev/block/mapper/product_a                              flags=display="Product.img";backup;flashimg;wipeingui 
+/system                   auto     /dev/block/mapper/system                                 flags=backup=0;removable;slotselect
+/system_ext               auto     /dev/block/mapper/system_ext                             flags=backup=0;removable;slotselect
+/vendor                   auto     /dev/block/mapper/vendor                                 flags=backup=0;removable;slotselect
+/product                  auto     /dev/block/mapper/product                                flags=backup=0;removable;slotselect 
+/system_img               emmc     /dev/block/mapper/system_a                               flags=display="System.img";backup;flashimg;removable;wipeingui
+/system_ext_img           emmc     /dev/block/mapper/system_ext_a                           flags=display="System_ext.img";backup;flashimg;removable;wipeingui
+/vendor_img               emmc     /dev/block/mapper/vendor_a                               flags=display="Vendor.img";backup;flashimg;removable;wipeingui
+/product_img              emmc     /dev/block/mapper/product_a                              flags=display="Product.img";backup;flashimg;removable;wipeingui 
 
 # Sensitif Data (IMEI, SIM, Device Info)
 # below four partitions are ext4, but we are using only for backup so emmc
